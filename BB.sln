@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB.Entities", "Entities\BB.Entities.csproj", "{01D23C32-A403-47C1-8AB3-29EECAD8C07F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB.Data", "Data\BB.Data.csproj", "{83D9FC38-B2AE-4B99-85FA-D8D9BE076E29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB.BelBike", "BB.BelBike\BB.BelBike.csproj", "{D51EDD60-2A25-41D3-8A9A-C8017045C2FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01D23C32-A403-47C1-8AB3-29EECAD8C07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D23C32-A403-47C1-8AB3-29EECAD8C07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D23C32-A403-47C1-8AB3-29EECAD8C07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D23C32-A403-47C1-8AB3-29EECAD8C07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D9FC38-B2AE-4B99-85FA-D8D9BE076E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D9FC38-B2AE-4B99-85FA-D8D9BE076E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D9FC38-B2AE-4B99-85FA-D8D9BE076E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D9FC38-B2AE-4B99-85FA-D8D9BE076E29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51EDD60-2A25-41D3-8A9A-C8017045C2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51EDD60-2A25-41D3-8A9A-C8017045C2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51EDD60-2A25-41D3-8A9A-C8017045C2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51EDD60-2A25-41D3-8A9A-C8017045C2FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D4CE870-BDA7-4CA8-BEA1-0B42437ECD8E}
+	EndGlobalSection
+EndGlobal
