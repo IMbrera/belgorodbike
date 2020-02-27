@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB.Data", "Data\BB.Data.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB.BelBike", "BB.BelBike\BB.BelBike.csproj", "{D51EDD60-2A25-41D3-8A9A-C8017045C2FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB.Services", "BB.Services\BB.Services.csproj", "{AF2E997D-C90B-452B-A9B3-AA0E45DFC876}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D51EDD60-2A25-41D3-8A9A-C8017045C2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D51EDD60-2A25-41D3-8A9A-C8017045C2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D51EDD60-2A25-41D3-8A9A-C8017045C2FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF2E997D-C90B-452B-A9B3-AA0E45DFC876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF2E997D-C90B-452B-A9B3-AA0E45DFC876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF2E997D-C90B-452B-A9B3-AA0E45DFC876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF2E997D-C90B-452B-A9B3-AA0E45DFC876}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

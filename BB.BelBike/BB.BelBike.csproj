@@ -168,7 +168,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Dashboard\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PartnerController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\PlaceController.cs" />
     <Compile Include="Areas\Dashboard\DashboardAreaRegistration.cs" />
+    <Compile Include="Areas\Dashboard\ViewModel\PartnerModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -222,6 +225,11 @@
     <Content Include="Areas\Dashboard\Content\vendor\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="Areas\Dashboard\Content\vendor\jquery\jquery.min.map" />
     <Content Include="Areas\Dashboard\Content\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Areas\Dashboard\Views\Partner\Index.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Place\Index.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Place\_List.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Partner\_List.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Partner\_Action.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -286,6 +294,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BB.Services\BB.Services.csproj">
+      <Project>{AF2E997D-C90B-452B-A9B3-AA0E45DFC876}</Project>
+      <Name>BB.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data\BB.Data.csproj">
       <Project>{83D9FC38-B2AE-4B99-85FA-D8D9BE076E29}</Project>
       <Name>BB.Data</Name>

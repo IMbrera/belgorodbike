@@ -1,0 +1,33 @@
+﻿@model BB.BelBike.Areas.Dashboard.ViewModel.PartnerModel
+@if (Model != null && Model.Partners != null && Model.Partners.Count() > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var m in Model.Partners)
+            {
+                <tr>
+                    <td>
+                        @m.Name
+                    </td>
+      
+                    <td>
+                        <button type="button" class="btn btn-primary">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+      Нет записей
+    </div>
+}
