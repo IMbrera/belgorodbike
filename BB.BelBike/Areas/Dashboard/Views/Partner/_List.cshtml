@@ -4,21 +4,22 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Name</th>
+                <th scope="col">Название</th>
             </tr>
         </thead>
         <tbody>
 
-            @foreach (var m in Model.Partners)
+            @foreach (var p in Model.Partners)
             {
                 <tr>
                     <td>
-                        @m.Name
+                        @p.Name
                     </td>
       
                     <td>
-                        <button type="button" class="btn btn-primary">Edit</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button data-href="@Url.Action("Action", "Partner", new { ID = p.ID })" type="button" class="data-btn btn btn-primary" data-toggle="modal" data-target="#actionModal"><i class="fas fa-pen mr-1"></i> Редактировать</button>
+                        <button data-href="@Url.Action("Delete", "Partner", new { ID = p.ID })" type="button" class="data-btn btn btn-danger" data-toggle="modal" data-target="#actionModal"><i class="fas fa-trash-alt mr-1"></i> Удалить</button>
+
                     </td>
                 </tr>
             }

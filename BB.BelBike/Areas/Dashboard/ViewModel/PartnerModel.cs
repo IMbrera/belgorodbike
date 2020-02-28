@@ -9,6 +9,7 @@ namespace BB.BelBike.Areas.Dashboard.ViewModel
     public class PartnerModel
     {
         public IEnumerable<Partner> Partners { get; set; }
+        public string Search { get; set; }
     }
     public class PartnerActionModel
     {

@@ -4,17 +4,25 @@
     <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title">
-                Добавить партнера
-            </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                @if (Model.ID > 0)
+                {
+                    <span>Изменить партнера</span>
+                }
+                    else 
+                 {
+                    <span>Добавить партнера</span>
+                 }
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
             <form id="actionForm">
+                <input type="hidden" name="ID" value="@Model.ID" />
                 <div class="form-group">
-                    <label>Name</label>
-                    <input class="form-control" name="Name" placeholder="Enter Type Name.">
+                    <label>Партнер:</label>
+                    <input class="form-control" value="@Model.Name" name="Name" placeholder="Ввод спонсоров/партнеров">
                 </div>
             </form>
 
@@ -23,8 +31,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button id="actionButton" type="button" class="btn btn-primary">Save changes</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="actionButton" type="button" class="btn btn-primary"><i class="fas fa-save mr-1"></i> Сохранить</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
         </div>
     </div>
 }
@@ -36,8 +44,7 @@
 			type: "post",
 			data: $("#actionForm").serialize()
 		})
-		.done(function (response) {
-			debugger;
+	.done(function (response) {
 			if(response.Success)
 			{
 				location.reload();

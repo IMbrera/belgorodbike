@@ -230,6 +230,7 @@
     <Content Include="Areas\Dashboard\Views\Place\_List.cshtml" />
     <Content Include="Areas\Dashboard\Views\Partner\_List.cshtml" />
     <Content Include="Areas\Dashboard\Views\Partner\_Action.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Partner\_Delete.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

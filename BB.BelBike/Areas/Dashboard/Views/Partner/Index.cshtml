@@ -6,18 +6,17 @@
 <div class="row">
     <div class="col col-lg-12">
         <h2>Партнеры</h2>
-        <hr />
     </div>
 </div>
 
 <div class="row mb-3">
     <div class="col col-lg-12">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Поиск">
+            <input type="text" class="form-control" value="" placeholder="Поиск">
             <div class="input-group-append">
-                <button class="btn btn-outline-primary" type="button">Search</button>
-                <button class="btn btn-outline-secondary" type="button">Reset</button>
-                <button id="createButton" class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#actionModal">Create</button>
+                <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search mr-1"></i>Поиск</button>
+                <a class="btn btn-outline-secondary" href="@Url.Action("Index", "Partner")"><i class="fas fa-redo-alt mr-1"></i> Reset</a>
+                <button data-href="@Url.Action("Action", "Partner")" class="data-btn btn btn-outline-success" type="button" data-toggle="modal" data-target="#actionModal"><i class="fas fa-plus mr-1"></i> Добавить</button>
             </div>
         </div>
     </div>
@@ -33,14 +32,13 @@
     <div class="modal-dialog" role="document">
     </div>
 </div>
-
 <script>
-	$("#createButton").click(function () {
-		$.ajax({
-			url: '@Url.Action("Action", "Partner")',
-		})
-		.done(function (response) {
-			$("#actionModal .modal-dialog").html(response);
-		});
-	});
+    $(".data-btn").click(function () {
+        $.ajax({
+            url: $(this).attr("data-href"),
+        })
+            .done(function (response) {
+                $("#actionModal .modal-dialog").html(response);
+            });
+    });
 </script>

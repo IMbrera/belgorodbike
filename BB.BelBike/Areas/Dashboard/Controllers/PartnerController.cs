@@ -13,8 +13,9 @@ namespace BB.BelBike.Areas.Dashboard.Controllers
     {
         PartnerServices partnerServices = new PartnerServices();
         // GET: Dashboard/Partner
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
+          
             return View();
         }
         public ActionResult List()
@@ -24,27 +25,73 @@ namespace BB.BelBike.Areas.Dashboard.Controllers
             return PartialView("_List", model);
         }
         [HttpGet]
-        public ActionResult Action()
+        public ActionResult Action(int? ID)
         {
             PartnerActionModel model = new PartnerActionModel();
-
+            if (ID.HasValue)
+            {
+                var partner = partnerServices.GetPartnerID(ID.Value);
+                model.ID = partner.ID;
+                model.Name = partner.Name;
+            }
             return PartialView("_Action", model);
         }
         [HttpPost]
         public JsonResult Action(PartnerActionModel model)
         {
             JsonResult json = new JsonResult();
+            var result = false;
+            if (model.ID > 0)
+            {
+                var partner = partnerServices.GetPartnerID(model.ID);
+                 partner.Name = model.Name;
+                result = partnerServices.UpdatePartner(partner);
+            }
+            else
+            {
+                Partner partner = new Partner();
+                partner.Name = model.Name;
+                result = partnerServices.SavePartner(partner);
+            }
+            if (result)
+            {
+                json.Data = new { Success = true };
+              //  TempData["message"] = string.Format("Партнер был добавлен");
+            }
+            else
+            {
+                json.Data = new { Success = false, Message = "Ошибка" };
+            }
+           
+            return json;
+        }
+        [HttpGet]
+        public ActionResult Delete(int ID)
+        {
+            PartnerActionModel model = new PartnerActionModel();
 
-            Partner partner = new Partner();
+            var partner = partnerServices.GetPartnerID(ID);
 
-            partner.Name = model.Name;
+            model.ID = partner.ID;
 
+            return PartialView("_Delete", model);
+        }
 
-            var result = partnerServices.SavePartner(partner);
+        [HttpPost]
+        public JsonResult Delete(PartnerActionModel model)
+        {
+            JsonResult json = new JsonResult();
+
+            var result = false;
+
+            var partner = partnerServices.GetPartnerID(model.ID);
+
+            result = partnerServices.DeletePartner(partner);
 
             if (result)
             {
                 json.Data = new { Success = true };
+                TempData["message"] = string.Format("Партнер был удален");
             }
             else
             {
