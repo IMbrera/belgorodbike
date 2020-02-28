@@ -15,8 +15,10 @@ namespace BB.BelBike.Areas.Dashboard.Controllers
         // GET: Dashboard/Partner
         public ActionResult Index(string search)
         {
-          
-            return View();
+            PartnerModel model = new PartnerModel();
+            model.Search = search;
+            model.Partners = partnerServices.SearchPartners(search);
+            return View(model);
         }
         public ActionResult List()
         {
@@ -56,7 +58,7 @@ namespace BB.BelBike.Areas.Dashboard.Controllers
             if (result)
             {
                 json.Data = new { Success = true };
-              //  TempData["message"] = string.Format("Партнер был добавлен");
+                TempData["message"] = string.Format("Изменения сохранены");
             }
             else
             {
