@@ -167,11 +167,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\CalendartController.cs" />
     <Compile Include="Areas\Dashboard\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Dashboard\Controllers\PartnerController.cs" />
     <Compile Include="Areas\Dashboard\Controllers\PlaceController.cs" />
     <Compile Include="Areas\Dashboard\DashboardAreaRegistration.cs" />
     <Compile Include="Areas\Dashboard\ViewModel\PartnerModel.cs" />
+    <Compile Include="Areas\Dashboard\ViewModel\PlaceModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -231,6 +233,8 @@
     <Content Include="Areas\Dashboard\Views\Partner\_List.cshtml" />
     <Content Include="Areas\Dashboard\Views\Partner\_Action.cshtml" />
     <Content Include="Areas\Dashboard\Views\Partner\_Delete.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Place\_Action.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Place\_Delete.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -280,6 +284,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Dashboard\Data\" />
+    <Folder Include="Areas\Dashboard\Views\Calendart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,1 +1,37 @@
-﻿
+﻿@model BB.BelBike.Areas.Dashboard.ViewModel.PlaceModel
+@if (Model != null && Model.Places != null && Model.Places.Count() > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Название</th><th scope="col">Координаты</th>
+            </tr>
+           
+        </thead>
+        <tbody>
+
+            @foreach (var p in Model.Places)
+            {
+                <tr>
+                    <td>
+                        @p.Name
+                    </td>
+                    <td>
+                        @p.Coords
+                    </td>
+                    <td>
+                        <button data-href="@Url.Action("Action", "Place", new { ID = p.ID })" type="button" class="data-btn btn btn-primary" data-toggle="modal" data-target="#actionModal"><i class="fas fa-pen mr-1"></i> Редактировать</button>
+                        <button data-href="@Url.Action("Delete", "Place", new { ID = p.ID })" type="button" class="data-btn btn btn-danger" data-toggle="modal" data-target="#actionModal"><i class="fas fa-trash-alt mr-1"></i> Удалить</button>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+        Нет записей
+    </div>
+}

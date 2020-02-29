@@ -14,9 +14,9 @@ namespace Entities
         public DateTime PublicDate { get; set; }
 
         public int PlaceID { get; set; }
-        public Place Place { get; set; }
+        public virtual Place Place { get; set; }
         public int CategoryID { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
        // public byte logo { get; set; }
        
 
