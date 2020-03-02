@@ -167,11 +167,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\Dashboard\Controllers\CalendartController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\CalendarController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Dashboard\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Dashboard\Controllers\PartnerController.cs" />
     <Compile Include="Areas\Dashboard\Controllers\PlaceController.cs" />
     <Compile Include="Areas\Dashboard\DashboardAreaRegistration.cs" />
+    <Compile Include="Areas\Dashboard\ViewModel\CalendarModel.cs" />
+    <Compile Include="Areas\Dashboard\ViewModel\CategoryModel.cs" />
     <Compile Include="Areas\Dashboard\ViewModel\PartnerModel.cs" />
     <Compile Include="Areas\Dashboard\ViewModel\PlaceModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -184,6 +187,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\PageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Dashboard\Content\css\simple-sidebar.css" />
@@ -235,6 +239,14 @@
     <Content Include="Areas\Dashboard\Views\Partner\_Delete.cshtml" />
     <Content Include="Areas\Dashboard\Views\Place\_Action.cshtml" />
     <Content Include="Areas\Dashboard\Views\Place\_Delete.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Calendar\Index.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Calendar\_List.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Calendar\_Action.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Category\_List.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Category\_Action.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Category\_Delete.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Calendar\_Delete.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -284,7 +296,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Dashboard\Data\" />
-    <Folder Include="Areas\Dashboard\Views\Calendart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

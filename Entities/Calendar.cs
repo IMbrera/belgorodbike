@@ -11,6 +11,7 @@ namespace Entities
         public int ID { get; set; }
         public string Name { get; set; }
         public DateTime DateOrg { get; set; }
+        
         public int PlaceID { get; set; }
         public virtual Place Place { get; set; }
     }

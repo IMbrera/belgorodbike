@@ -1,0 +1,86 @@
+﻿@model BB.BelBike.Areas.Dashboard.ViewModel.CalendarModel
+@if (Model != null && Model.Calendars != null && Model.Calendars.Count() > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Название</th>
+                <th scope="col">Дата проведения</th>
+                <th scope="col">Место проведения</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            @foreach (var p in Model.Calendars)
+            {
+                <tr>
+                    <td>
+                        @p.Name
+                    </td>
+                    <td>
+                        @p.DateOrg
+                    </td>
+                    <td>
+                        @if (p.Place != null)
+                        {
+                            @p.Place.Name
+                        }
+                    </td>
+                    <td>
+                        <button data-href="@Url.Action("Action", "Calendar", new { ID = p.ID })" type="button" class="data-btn btn btn-primary" data-toggle="modal" data-target="#actionModal"><i class="fas fa-pen mr-1"></i> Редактировать</button>
+                        <button data-href="@Url.Action("Delete", "Calendar", new { ID = p.ID })" type="button" class="data-btn btn btn-danger" data-toggle="modal" data-target="#actionModal"><i class="fas fa-trash-alt mr-1"></i> Удалить</button>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    if (Model.Pager.EndPage > 1)
+    {
+        <nav>
+            <ul class="pagination">
+                @if (Model.Pager.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", "Calendar")">
+                            <i class="fas fa-angle-double-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", "Calendar", new { page = Model.Pager.CurrentPage - 1, search = Model.Search, placeID = Model.PlaceID })">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                    </li>
+                }
+
+                @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
+                {
+                    <li class="page-item @(page == Model.Pager.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("Index", "Calendar", new { page = page, search = Model.Search, placeID = Model.PlaceID })">@page</a>
+                    </li>
+                }
+
+                @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", "Calendar", new { page = Model.Pager.CurrentPage + 1, search = Model.Search, placeID = Model.PlaceID })">
+                            <i class="fas fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", "Calendar", new { page = Model.Pager.TotalPages, searchTerm = Model.Search, placeID = Model.PlaceID })">
+                            <i class="fas fa-angle-double-right"></i>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+}
+else
+{
+<div class="alert alert-warning" role="alert">
+    Нет записей
+</div>
+}

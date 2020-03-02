@@ -1,0 +1,35 @@
+﻿@model BB.BelBike.Areas.Dashboard.ViewModel.CategoryModel
+@if (Model != null && Model.Categories != null && Model.Categories.Count() > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Название</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var p in Model.Categories)
+            {
+                <tr>
+                    <td>
+                        @p.Name
+                    </td>
+
+                    <td>
+                        <button data-href="@Url.Action("Action", "Category", new { ID = p.ID })" type="button" class="data-btn btn btn-primary" data-toggle="modal" data-target="#actionModal"><i class="fas fa-pen mr-1"></i> Редактировать</button>
+                        <button data-href="@Url.Action("Delete", "Category", new { ID = p.ID })" type="button" class="data-btn btn btn-danger" data-toggle="modal" data-target="#actionModal"><i class="fas fa-trash-alt mr-1"></i> Удалить</button>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+        Нет записей
+    </div>
+}
+

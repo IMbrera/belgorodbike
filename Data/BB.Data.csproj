@@ -65,6 +65,14 @@
     <Compile Include="Migrations\202002221925094_Identityframe.Designer.cs">
       <DependentUpon>202002221925094_Identityframe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002292018018_entitys.cs" />
+    <Compile Include="Migrations\202002292018018_entitys.Designer.cs">
+      <DependentUpon>202002292018018_entitys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003021324417_UpdateDateDB.cs" />
+    <Compile Include="Migrations\202003021324417_UpdateDateDB.Designer.cs">
+      <DependentUpon>202003021324417_UpdateDateDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,6 +92,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002221925094_Identityframe.resx">
       <DependentUpon>202002221925094_Identityframe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002292018018_entitys.resx">
+      <DependentUpon>202002292018018_entitys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021324417_UpdateDateDB.resx">
+      <DependentUpon>202003021324417_UpdateDateDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

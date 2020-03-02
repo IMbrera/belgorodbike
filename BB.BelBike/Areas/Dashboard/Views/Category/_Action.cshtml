@@ -1,4 +1,4 @@
-﻿@model BB.BelBike.Areas.Dashboard.ViewModel.PartnerActionModel
+﻿@model BB.BelBike.Areas.Dashboard.ViewModel.ActionCategoryModel
 @if (Model != null)
 {
     <div class="modal-content">
@@ -6,14 +6,14 @@
             <h5 class="modal-title">
                 @if (Model.ID > 0)
                 {
-                    <span>Изменить партнера</span>
+                    <span>Изменить категорию</span>
                 }
-                    else 
-                 {
-                    <span>Добавить партнера</span>
-                 }
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                else
+                {
+                    <span>Добавить категорию</span>
+                }
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
@@ -21,7 +21,7 @@
             <form id="actionForm">
                 <input type="hidden" name="ID" value="@Model.ID" />
                 <div class="form-group">
-                    <label>Партнер:</label>
+                    <label>Категория:</label>
                     <input class="form-control" value="@Model.Name" name="Name">
                 </div>
             </form>
@@ -40,7 +40,7 @@
 <script>
 	$("#actionButton").click(function () {
 		$.ajax({
-			url: '@Url.Action("Action", "Partner")',
+			url: '@Url.Action("Action", "Category")',
 			type: "post",
 			data: $("#actionForm").serialize()
 		})
